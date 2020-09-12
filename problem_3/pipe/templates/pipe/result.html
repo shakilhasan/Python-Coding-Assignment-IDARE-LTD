@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<p id="demo"></p>
+<script> var r1 = 0; </script>
+
+<div class="row text-center">
+<script>
+var r2 =  {{ pipe.pipe_diameter }}/2
+var r1 = r2-{{ pipe.pipe_thicknes }}
+var r3 = r2+{{ pipe.coating_thicknes }}
+var td = {{ pipe.pipe_diameter }}+{{ pipe.coating_thicknes }}
+document.getElementById("demo").innerHTML =
+"Pipe Inside Radius-r1: " + r1 +"<br>Pipe Outside Radius-r2: "+r2
++"<br> Outer Radius of Coating1-r3: "+r3+"<br>Total Pipeline Outside Diameter: "+td;
+</script>
+
+</div>
+
+{% endblock %}

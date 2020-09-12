@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<h5>Fill out your information</h5>
+
+<form class="form" method="post" action="result">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input id="myInput" type="hidden" name="total" value="0" size="50" />
+      <br />
+    <input type="submit" value="Calculate" class="btn btn-primary" />
+</form>
+{% endblock content %}
